@@ -2,14 +2,14 @@ import { $, useComputed$, useContext } from '@builder.io/qwik';
 
 import { type ThemeState, ThemeStateContext } from '~/context';
 
-import { shadeColor } from '~/helpers/darkerColor';
+import { darkerColor } from '~/helpers/darkerColor';
 
 export const useTheme = () => {
     const theme = useContext(ThemeStateContext);
 
     const changeTheme = $((themeChanged: Omit<ThemeState, 'darkBackgroundColor'>) => {
         const { backgroundColor, color } = themeChanged;
-        const lightBackground = shadeColor(backgroundColor, 20);
+        const lightBackground = darkerColor(backgroundColor, 10);
         theme.darkBackgroundColor = lightBackground;
         theme.backgroundColor = backgroundColor;
         theme.color = color;

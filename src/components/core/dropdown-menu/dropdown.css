@@ -1,3 +1,7 @@
+.dropdown-container {
+    position: relative;
+}
+
 .container {
     align-items: center;
     border-radius: 10px;
@@ -6,11 +10,31 @@
     height: 50px;
     justify-content: center;
     left: 10px;
-    position: fixed;
+    position: relative;
     top: 10px;
     width: 50px;
 
     .icon {
         font-size: 20px;
+    }
+}
+
+.dropdown {
+    transition: all 0.3s ease-in-out;
+    background-color: #1d1d1d;
+    color: white;
+    border-radius: 5px;
+    max-width: 300px;
+    min-width: 300px;
+    position: absolute;
+    top: 40px !important;
+    left: 60px;
+    padding: 20px;
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
     }
 }
