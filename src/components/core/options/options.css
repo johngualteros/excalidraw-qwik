@@ -1,0 +1,10 @@
+.container {
+    max-width: 50%;
+    min-width: 50%;
+    padding: 7px;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+}
