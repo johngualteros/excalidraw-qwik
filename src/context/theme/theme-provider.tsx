@@ -11,10 +11,9 @@ export const ThemeProvider = component$(() => {
     });
 
     useVisibleTask$(() => {
-        // theme should be and object
         // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
         const { backgroundColor = '#333333', color = '#ffffff' } = JSON.parse(localStorage.getItem('theme')!) as ThemeState ?? {};
-        const ligthBackground = darkerColor(backgroundColor, 10);
+        const ligthBackground = darkerColor(backgroundColor, 3);
         theme.backgroundColor = backgroundColor;
         theme.color = color;
         theme.darkBackgroundColor = ligthBackground;

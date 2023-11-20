@@ -14,19 +14,19 @@ const possibleColors: any = [
         color: '#ffffff',
     },
     {
-        backgroundColor: '#00302E',
+        backgroundColor: '#000000',
         color: '#ffffff',
     },
     {
-        backgroundColor: '#000A30',
+        backgroundColor: '#16000B',
         color: '#ffffff',
     },
     {
-        backgroundColor: '#300000',
+        backgroundColor: '#0A1725',
         color: '#ffffff',
     },
     {
-        backgroundColor: '#003028',
+        backgroundColor: '#10250A',
         color: '#ffffff',
     }
 ];
@@ -36,7 +36,7 @@ export const useTheme = () => {
 
     const changeTheme = $((themeChanged: any) => {
         const { backgroundColor, color } = themeChanged;
-        const lightBackground = darkerColor(backgroundColor, 10);
+        const lightBackground = darkerColor(backgroundColor, 3);
         theme.darkBackgroundColor = lightBackground;
         theme.backgroundColor = backgroundColor;
         theme.color = color;

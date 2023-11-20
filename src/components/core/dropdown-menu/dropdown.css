@@ -21,8 +21,6 @@
 
 .dropdown {
     transition: all 0.3s ease-in-out;
-    background-color: #1d1d1d;
-    color: white;
     border-radius: 5px;
     max-width: 300px;
     min-width: 300px;
@@ -54,6 +52,7 @@
                 height: 20px;
                 border-radius: 50%;
                 cursor: pointer;
+                border: 1px solid #ccc;
             }
 
             color: white;

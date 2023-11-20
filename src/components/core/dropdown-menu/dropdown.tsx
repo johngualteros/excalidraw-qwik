@@ -1,4 +1,4 @@
-import { component$, useSignal, useStylesScoped$, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useSignal, useStylesScoped$ } from '@builder.io/qwik';
 
 import { MoMenu, MoSun } from '@qwikest/icons/monoicons'
 
@@ -11,7 +11,7 @@ interface DropDownProps {
 
 export const DropDown =  component$(({backgroundColor}: DropDownProps) => {
     useStylesScoped$(styles);
-    const isDisplayed = useSignal<boolean>(true);
+    const isDisplayed = useSignal<boolean>(false);
     const { possibleThemes, changeTheme } = useTheme();
     return (
         <>
@@ -25,7 +25,7 @@ export const DropDown =  component$(({backgroundColor}: DropDownProps) => {
                 <MoMenu class='icon'/>
             </div>
             {isDisplayed.value && (
-                <div class='dropdown'>
+                <div class='dropdown' style={{backgroundColor: backgroundColor}}>
                     <div class='item'>
                         <div class="description-item">
                             <MoSun class='icon'/>
