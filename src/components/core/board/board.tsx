@@ -11,9 +11,9 @@ export const Board =  component$(() => {
     const { darkBackgroundColor } = useTheme();
 
     return (
-        <>
+        <main id="board">
             <DropDown backgroundColor={darkBackgroundColor.value} />
             <Options backgroundColor={darkBackgroundColor.value} />
-        </>
+        </main>
     );
 });

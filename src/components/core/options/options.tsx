@@ -23,10 +23,17 @@ export const Options = component$(({backgroundColor}: OptionsProps) => {
     useStylesScoped$(styles);
 
     const handleKeyDown = $((e: string) => {
+        const cursor = document.getElementById('board');
         if (e === OptionsKey.HAND) {
-            // Handle hand key press
+            if(cursor?.classList.contains('normal')) {
+                cursor.classList.remove('normal');
+            }
+            cursor?.classList.add('grab');
         } else if (e === OptionsKey.POINTER) {
-            // Handle pointer key press
+            if(cursor?.classList.contains('grab')) {
+                cursor.classList.remove('grab');
+            }
+            cursor?.classList.add('normal');
         } else if (e === OptionsKey.SQUARE) {
             // Handle square key press
         } else if (e === OptionsKey.DIAMOND) {
