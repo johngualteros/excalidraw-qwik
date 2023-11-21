@@ -1,4 +1,4 @@
-import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { $, component$, useStylesScoped$ } from "@builder.io/qwik";
 import styles from './options.css?inline';
 import { LuCaseSensitive, LuCircle, LuDiamond, LuHand, LuImage, LuMinus, LuMousePointer2, LuMoveRight, LuPencil, LuSquare } from '@qwikest/icons/lucide';
 
@@ -6,14 +6,53 @@ interface OptionsProps {
     backgroundColor: string;
 }
 
+enum OptionsKey {
+    HAND = '0',
+    POINTER = '1',
+    SQUARE = '2',
+    DIAMOND = '3',
+    CIRCLE = '4',
+    MOVE = '5',
+    MINUS = '6',
+    CASE_SENSITIVE = '7',
+    PENCIL = '8',
+    IMAGE = '9'
+}
+
 export const Options = component$(({backgroundColor}: OptionsProps) => {
     useStylesScoped$(styles);
+
+    const handleKeyDown = $((e: string) => {
+        if (e === OptionsKey.HAND) {
+            // Handle hand key press
+        } else if (e === OptionsKey.POINTER) {
+            // Handle pointer key press
+        } else if (e === OptionsKey.SQUARE) {
+            // Handle square key press
+        } else if (e === OptionsKey.DIAMOND) {
+            // Handle diamond key press
+        } else if (e === OptionsKey.CIRCLE) {
+            // Handle circle key press
+        } else if (e === OptionsKey.MOVE) {
+            // Handle move key press
+        } else if (e === OptionsKey.MINUS) {
+            // Handle minus key press
+        } else if (e === OptionsKey.CASE_SENSITIVE) {
+            // Handle case sensitive key press
+        } else if (e === OptionsKey.PENCIL) {
+            // Handle pencil key press
+        } else if (e === OptionsKey.IMAGE) {
+            // Handle image key press
+        }
+    });
+
     return (
         <div 
             style={{
                 backgroundColor: backgroundColor
             }}
             class="container"
+            window:onKeyDown$={(e) => handleKeyDown(e.key)}
         >
             <div class="container_option">
                 <LuHand class="icon"/>
